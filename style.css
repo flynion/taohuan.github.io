@@ -2534,6 +2534,20 @@ a {
   border-bottom: 0;
 }
 
+.award-list article {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 20px;
+  align-items: center;
+  padding: 18px 24px;
+  border-bottom: 1px solid #edf2f7;
+  border-left: 4px solid transparent;
+}
+
+.award-list article:last-child {
+  border-bottom: 0;
+}
+
 .award-list details[open] {
   border-left-color: var(--hl-blue);
   background: #f8fbfe;
@@ -3003,6 +3017,12 @@ a {
 
   .award-list summary {
     grid-template-columns: 1fr auto;
+    gap: 10px;
+    align-items: start;
+  }
+
+  .award-list article {
+    grid-template-columns: 1fr;
     gap: 10px;
     align-items: start;
   }
