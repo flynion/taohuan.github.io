@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -14,7 +14,13 @@
     </a>
     <nav class="site-nav" aria-label="Primary navigation">
       <a href="research.html">Research</a>
-      <a href="people.html">People</a>
+      <div class="site-nav__item site-nav__item--dropdown">
+        <a href="people.html" aria-haspopup="true">People</a>
+        <div class="site-nav__submenu" aria-label="People submenu">
+          <a href="tao-huan.html">Tao Huan</a>
+          <a href="current-members.html">Lab members</a>
+        </div>
+      </div>
       <a href="publications.html">Publications</a>
       <a href="contact.html">Contact</a>
     </nav>
@@ -24,8 +30,8 @@
     <section class="page-hero page-hero--people">
       <div class="hl-wrap">
         <p class="hl-eyebrow">People</p>
-        <h1>Scientists working across instruments, code, and biology.</h1>
-        <p>The Huan Lab brings together trainees and researchers in analytical chemistry, metabolomics, exposomics, bioinformatics, machine learning, and systems biology.</p>
+        <h1>Scientists working across instrumentation, computation, and biology</h1>
+        <p>The Huan Lab brings together trainees and researchers in analytical chemistry, bioinformatics, metabolomics, machine learning, and systems biology.</p>
       </div>
     </section>
 
@@ -35,7 +41,7 @@
           <div>
             <p class="hl-eyebrow hl-eyebrow--dark">Principal investigator</p>
             <h2>Dr. Tao Huan</h2>
-            <p>Associate Professor, Department of Chemistry, The University of British Columbia. The Huan Lab develops mass spectrometry and computational metabolomics technologies for biological and environmental applications.</p>
+            <p>Associate Professor, Department of Chemistry, The University of British Columbia</p>
             <span class="text-link">View full profile</span>
           </div>
         </a>
@@ -89,12 +95,50 @@
         </div>
         <div>
           <p>Members learn to think across experimental design, instrument performance, data quality, statistical interpretation, and biological context. The group is well suited for trainees who want to build both chemical intuition and computational fluency.</p>
-          <a class="hl-button" href="contact.html">Join the lab</a>
         </div>
       </div>
     </section>
 
-    <section class="page-section page-section--soft" id="alumni">
+    <section class="page-section page-section--soft" id="prospective-trainees">
+      <div class="hl-wrap">
+        <div class="split-feature">
+          <div>
+            <p class="hl-eyebrow hl-eyebrow--dark">Join the lab</p>
+            <h2>Join the Huan Lab.</h2>
+          </div>
+          <div>
+            <p>We welcome conversations with prospective trainees interested in metabolomics, exposomics, mass spectrometry, bioinformatics, and artificial intelligence.</p>
+          </div>
+        </div>
+        <div class="people-tab-grid people-tab-grid--single" aria-label="Prospective trainee information">
+          <article class="people-tab-card prospective-card">
+            <div class="prospective-card__lead">
+              <div>
+                <span class="people-tab-card__eyebrow">Prospective trainees</span>
+                <p>The lab welcomes outstanding Ph.D. and M.Sc. candidates, postdoctoral fellows, and visiting scholars interested in analytical mass spectrometry, metabolomics, exposomics, bioinformatics, artificial intelligence, systems biology, and biological or environmental applications.</p>
+              </div>
+              <ul class="prospective-card__highlights" aria-label="Training strengths">
+                <li>Analytical mass spectrometry</li>
+                <li>Computational metabolomics</li>
+                <li>Biological and environmental applications</li>
+              </ul>
+            </div>
+            <div class="prospective-card__details">
+              <section>
+                <h3>For graduate students</h3>
+                <p>Graduate applicants may apply through <a href="https://chem.ubc.ca/prospective-graduate-students" target="_blank" rel="noopener">UBC Chemistry</a>, <a href="https://www.gsat.ubc.ca/admission/" target="_blank" rel="noopener">Genome Science and Technology</a>, or <a href="https://www.bioinformatics.ubc.ca/program/" target="_blank" rel="noopener">Bioinformatics</a>, depending on their academic background.</p>
+              </section>
+              <section>
+                <h3>For postdoctoral fellows and visiting scholars</h3>
+                <p>Prospective postdoctoral fellows and visiting scholars are encouraged to contact the lab directly with their research interests, training goals, and potential fit with ongoing metabolomics and exposomics projects.</p>
+              </section>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section page-section--soft" id="people-links">
       <div class="hl-wrap">
         <div class="people-tab-grid" aria-label="People page links">
           <a class="people-tab-card people-tab-card--link" href="alumni.html">
@@ -120,3 +164,5 @@
   </footer>
 </body>
 </html>
+
+

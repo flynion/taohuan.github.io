@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -14,7 +14,13 @@
     </a>
     <nav class="site-nav" aria-label="Primary navigation">
       <a href="research.html">Research</a>
-      <a href="people.html">People</a>
+      <div class="site-nav__item site-nav__item--dropdown">
+        <a href="people.html" aria-haspopup="true">People</a>
+        <div class="site-nav__submenu" aria-label="People submenu">
+          <a href="tao-huan.html">Tao Huan</a>
+          <a href="current-members.html">Lab members</a>
+        </div>
+      </div>
       <a href="publications.html">Publications</a>
       <a href="contact.html">Contact</a>
     </nav>
@@ -22,9 +28,9 @@
 
   <section class="hl-hero" aria-labelledby="hl-hero-title">
     <div class="hl-hero__inner">
-      <p class="hl-eyebrow">High-resolution mass spectrometry · AI-enabled metabolomics · Exposomics</p>
-      <h1 id="hl-hero-title">Decoding the small-molecule chemistry of life, health, and environment</h1>
-      <p class="hl-hero__copy">The Huan Lab develops next-generation analytical chemistry and computational methods to detect, quantify, and interpret thousands of metabolites, lipids, and environmental chemicals from complex biological and environmental systems.</p>
+      <p class="hl-eyebrow">High-resolution mass spectrometry &middot; enabled metabolomics &middot; Exposomics</p>
+      <h1 id="hl-hero-title">Advancing analytical chemistry to decode the molecular signatures of life, health, and environment</h1>
+      <p class="hl-hero__copy">The Huan Lab develops next-generation analytical chemistry and computational biology to detect, quantify, and interpret thousands of metabolites, lipids, and environmental chemicals from complex biological and environmental systems.</p>
       <div class="hl-actions">
         <a class="hl-button" href="research.html">Explore research</a>
         <a class="hl-button hl-button--secondary" href="people.html">Meet the team</a>
@@ -54,7 +60,7 @@
       <div class="hl-intro">
         <p class="hl-eyebrow hl-eyebrow--dark">Research engine</p>
         <h2 id="hl-research-title">Turning complex spectra into chemical and biological meaning</h2>
-        <p>Our research connects analytical chemistry, machine learning, and systems biology to push metabolomics beyond measurement and toward confident molecular interpretation.</p>
+        <p>Our research connects analytical chemistry and computational biology to push metabolomics beyond measurement and toward confident molecular interpretation.</p>
         <a class="hl-button" href="research.html">View research</a>
       </div>
 
@@ -62,12 +68,12 @@
         <article class="hl-research-item">
           <div>
             <h3>Next-Generation Mass Spectrometry</h3>
-            <p>Improving LC-MS/MS acquisition, sensitivity, throughput, and quantitative confidence for omics-scale small-molecule analysis.</p>
+            <p>Improving MS acquisition, sensitivity, throughput, and quantitative confidence for omics-scale small-molecule analysis.</p>
           </div>
         </article>
         <article class="hl-research-item">
           <div>
-            <h3>AI-Assisted Data Processing</h3>
+            <h3>AI-Assisted Omics Data Processing</h3>
             <p>Developing computational tools to extract reliable signals from noisy, high-dimensional LC-MS datasets.</p>
           </div>
         </article>
@@ -91,7 +97,7 @@
     <div class="hl-wrap">
       <div class="hl-section-head">
         <h2 id="hl-work-title">A Full-Stack Platform for Chemical Discovery</h2>
-        <p>We build the complete metabolomics workflow: from sample extraction and LC-MS acquisition to AI-assisted data interpretation and biological insight.</p>
+        <p>We build the complete metabolomics workflow: from sample extraction and MS data acquisition to data processing and biological validation.</p>
       </div>
 
       <div class="hl-focus-grid">
@@ -100,7 +106,6 @@
             <span>01</span>
             <h3>Precision Sample Preparation</h3>
             <p>Robust extraction workflows designed to preserve chemical coverage across metabolites, lipids, and exposure-related compounds.</p>
-            <a href="research.html">Learn more</a>
           </div>
         </article>
         <article class="hl-focus-card hl-focus-card--system">
@@ -108,7 +113,6 @@
             <span>02</span>
             <h3>High-Performance LC-MS</h3>
             <p>Instrument methods and quality-control strategies for reproducible, high-throughput chemical measurement.</p>
-            <a href="research.html">Learn more</a>
           </div>
         </article>
         <article class="hl-focus-card hl-focus-card--data">
@@ -116,7 +120,6 @@
             <span>03</span>
             <h3>Computational Metabolomics</h3>
             <p>Algorithms for feature detection, normalization, annotation, and quantitative reliability in large-scale LC-MS studies.</p>
-            <a href="research.html">Learn more</a>
           </div>
         </article>
         <article class="hl-focus-card hl-focus-card--team">
@@ -145,7 +148,7 @@
           <div>
             <span>Ion mobility QTOF</span>
             <h3>Bruker timsTOF HT</h3>
-            <p>High-throughput trapped ion mobility QTOF for deep LC-MS/MS molecular profiling.</p>
+            <p>High-throughput trapped ion mobility QTOF for deep MS molecular profiling.</p>
             <details class="hl-instrument-more">
               <summary>Details</summary>
               <p>Supports CCS-enabled characterization and high dynamic range acquisition for large-scale metabolomics, lipidomics, and related omics workflows.</p>
@@ -168,11 +171,11 @@
         </article>
         <article class="hl-instrument-card">
           <div class="hl-instrument-media hl-instrument-media--impact">
-            <img src="images/instruments/bruker-impact.jpg" alt="Bruker impact mass spectrometer">
+            <img src="images/instruments/impact-qtof.jpg" alt="Bruker impact mass spectrometer">
           </div>
           <div>
             <span>High-resolution QTOF</span>
-            <h3>Bruker impact II VIP QTOF</h3>
+            <h3>Bruker impact II QTOF</h3>
             <p>Ultra-high-resolution accurate-mass QTOF for untargeted discovery.</p>
             <details class="hl-instrument-more">
               <summary>Details</summary>
@@ -195,6 +198,32 @@
             </details>
           </div>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="hl-section hl-section--white" aria-labelledby="hl-pubs-title">
+    <div class="hl-wrap hl-split">
+      <div class="hl-intro">
+        <p class="hl-eyebrow hl-eyebrow--dark">Research output</p>
+        <h2 id="hl-pubs-title">Methods and applications advancing modern metabolomics</h2>
+        <p>Our publications span analytical chemistry, machine learning, exposomics, lipidomics, environmental health, and collaborative biological discovery.</p>
+        <a class="hl-button" href="publications.html">All publications</a>
+      </div>
+      <div class="hl-publication-panel">
+        <h3>Selected Recent Work</h3>
+        <a class="hl-publication" href="publications.html">
+          <strong>The Multifaceted Challenge of Normalizing Mass Spectrometry-Based Metabolomics Data</strong>
+          <span>Analytical Chemistry, accepted</span>
+        </a>
+        <a class="hl-publication" href="publications.html">
+          <strong>Disinfection Byproducts in the Long-Tail Exposome: Unmet Challenges for Water Quality and Human Health</strong>
+          <span>Environmental Science &amp; Technology, accepted</span>
+        </a>
+        <a class="hl-publication" href="https://pubs.acs.org/doi/10.1021/acs.analchem.5c01417" target="_blank" rel="noopener">
+          <strong>Practical Guidance for Training Machine Learning Models in Metabolomics and Mass Spectrometry Research</strong>
+          <span>Analytical Chemistry, 2025</span>
+        </a>
       </div>
     </div>
   </section>
@@ -257,32 +286,6 @@
     </div>
   </section>
 
-  <section class="hl-section hl-section--white" aria-labelledby="hl-pubs-title">
-    <div class="hl-wrap hl-split">
-      <div class="hl-intro">
-        <p class="hl-eyebrow hl-eyebrow--dark">Research output</p>
-        <h2 id="hl-pubs-title">Methods and applications advancing modern metabolomics</h2>
-        <p>Our publications span analytical chemistry, machine learning, exposomics, lipidomics, environmental health, and collaborative biological discovery.</p>
-        <a class="hl-button" href="publications.html">All publications</a>
-      </div>
-      <div class="hl-publication-panel">
-        <h3>Selected Recent Work</h3>
-        <a class="hl-publication" href="publications.html">
-          <strong>The Multifaceted Challenge of Normalizing Mass Spectrometry-Based Metabolomics Data</strong>
-          <span>Analytical Chemistry, accepted</span>
-        </a>
-        <a class="hl-publication" href="publications.html">
-          <strong>Disinfection Byproducts in the Long-Tail Exposome: Unmet Challenges for Water Quality and Human Health</strong>
-          <span>Environmental Science &amp; Technology, accepted</span>
-        </a>
-        <a class="hl-publication" href="https://pubs.acs.org/doi/10.1021/acs.analchem.5c01417" target="_blank" rel="noopener">
-          <strong>Practical Guidance for Training Machine Learning Models in Metabolomics and Mass Spectrometry Research</strong>
-          <span>Analytical Chemistry, 2025</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
   <section class="hl-join" aria-labelledby="hl-join-title">
     <div class="hl-wrap hl-join__inner">
       <div>
@@ -298,8 +301,10 @@
   <footer class="site-footer">
     <div class="hl-wrap">
       <a class="site-footer__brand" href="index.html"><strong>Huan Lab</strong></a>
-      <span>Department of Chemistry, The University of British Columbia · Vancouver, BC</span>
+      <span>Department of Chemistry, The University of British Columbia &middot; Vancouver, BC</span>
     </div>
   </footer>
 </body>
 </html>
+
+

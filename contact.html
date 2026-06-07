@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -14,7 +14,13 @@
     </a>
     <nav class="site-nav" aria-label="Primary navigation">
       <a href="research.html">Research</a>
-      <a href="people.html">People</a>
+      <div class="site-nav__item site-nav__item--dropdown">
+        <a href="people.html" aria-haspopup="true">People</a>
+        <div class="site-nav__submenu" aria-label="People submenu">
+          <a href="tao-huan.html">Tao Huan</a>
+          <a href="current-members.html">Lab members</a>
+        </div>
+      </div>
       <a href="publications.html">Publications</a>
       <a href="contact.html">Contact</a>
     </nav>
@@ -24,8 +30,8 @@
     <section class="page-hero page-hero--contact">
       <div class="hl-wrap">
         <p class="hl-eyebrow">Contact</p>
-        <h1>Join the Huan Lab.</h1>
-        <p>We welcome conversations with prospective trainees interested in metabolomics, exposomics, mass spectrometry, bioinformatics, and artificial intelligence.</p>
+        <h1>Build the future of metabolomics with us</h1>
+        <p>Reach out about analytical mass spectrometry, metabolomics, exposomics, training opportunities, and collaborative research.</p>
       </div>
     </section>
 
@@ -34,31 +40,33 @@
         <article class="info-card">
           <span class="card-kicker">Location</span>
           <h2>Department of Chemistry</h2>
-          <p>The University of British Columbia<br>2036 Main Mall<br>Vancouver, BC, Canada</p>
+          <div class="contact-address-list">
+            <address>
+              <strong>Campus address</strong>
+              <span>The University of British Columbia</span>
+              <span>2036 Main Mall</span>
+              <span>Vancouver, BC, Canada V6T 1Z1</span>
+            </address>
+            <address>
+              <strong>Shipping address</strong>
+              <span>Huan Lab</span>
+              <span>B170, 2036 Main Mall</span>
+              <span>Vancouver, BC, Canada V6T 1Z1</span>
+            </address>
+          </div>
         </article>
         <article class="info-card">
-          <span class="card-kicker">Prospective trainees</span>
-          <h2>Graduate students and postdoctoral fellows</h2>
-          <p>The lab welcomes outstanding Ph.D. and M.Sc. candidates, postdoctoral fellows, and visiting scholars interested in analytical mass spectrometry, metabolomics, exposomics, bioinformatics, artificial intelligence, systems biology, and biological or environmental applications.</p>
-          <details class="contact-more">
-            <summary>Application details</summary>
-            <p>Graduate applicants may apply through <a href="https://chem.ubc.ca/prospective-graduate-students" target="_blank" rel="noopener">UBC Chemistry</a>, <a href="https://www.gsat.ubc.ca/admission/" target="_blank" rel="noopener">Genome Science and Technology</a>, or <a href="https://www.bioinformatics.ubc.ca/program/" target="_blank" rel="noopener">Bioinformatics</a>, depending on their academic background. Prior expertise is not required; the lab trains motivated students and encourages prospective applicants to contact current group members to learn more about the lab environment.</p>
-          </details>
+          <span class="card-kicker">Joining us</span>
+          <h2>Prospective trainees</h2>
+          <p>Graduate students, postdoctoral fellows, and visiting scholars interested in analytical mass spectrometry, metabolomics, exposomics, and bioinformatics are encouraged to learn more about joining the lab.</p>
+          <a class="contact-email-link" href="people.html#prospective-trainees">How to join</a>
         </article>
         <article class="info-card">
           <span class="card-kicker">Collaborations</span>
           <h2>Metabolomics and exposomics partnerships</h2>
-          <p>The lab collaborates on biological, environmental, and health-focused projects where high-quality small-molecule measurement and data interpretation can create new insight.</p>
+          <p>We welcome collaborations that use high-quality metabolomics and exposomics measurements to answer biological, environmental, and health-focused questions.</p>
+          <a class="contact-email-link" href="mailto:thuan@chem.ubc.ca">Contact Us</a>
         </article>
-      </div>
-    </section>
-
-    <section class="hl-join" aria-labelledby="join-title">
-      <div class="hl-wrap hl-join__inner">
-        <div>
-          <h2 id="join-title">Build the future of metabolomics with us.</h2>
-        </div>
-        <a class="hl-button hl-button--light" href="mailto:thuan@chem.ubc.ca">Contact Us</a>
       </div>
     </section>
   </main>
@@ -71,3 +79,5 @@
   </footer>
 </body>
 </html>
+
+
