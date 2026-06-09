@@ -115,7 +115,7 @@
     <li><span class="pub-number">44</span><p><a class="publication-reference-link" href="https://doi.org/10.1021/acsinfecdis.3c00237" target="_blank" rel="noopener">K. Brown, J. Krehkhno, S. Xing, T. Huan, L. Eltis, &lsquo;Cholesterol-Mediated Coenzyme A Depletion in Catabolic Mutants of Mycobacteria Leads to Toxicity&rsquo;, <strong><em>ACS Infectious Diseases</em></strong>, 10(1), 107-119, 2024</a></p></li>
     <li><span class="pub-number">45</span><p><a class="publication-reference-link" href="https://doi.org/10.1021/acs.analchem.3c00736.s002" target="_blank" rel="noopener">T. Zhao, S. Xing, H. Yu, T. Huan, ‘De Novo Cleaning of Chimeric MS/MS Spectra for LC-MS/MS-Based Metabolomics’, <strong><em>Analytical Chemistry</em></strong>, 95(35), 13018-13028, 2023</a></p></li>
     <li><span class="pub-number">46</span><p><a class="publication-reference-link" href="https://doi.org/10.1016/j.celrep.2023.112997" target="_blank" rel="noopener">T. Fu, T. Huan, G. Rahman, H. Zhi, Z. Xu, TG. Oh, J. Guo, S. Couter, A. Tripathi, C. Martino, JL. McCarville, Q. Zhu, F. B.Low, Cayabyab, M. He, S. Xing, F. Vargas, RT. Yu, A. Atkins, C. Liddle, J. Ayres, M. Raffatellu, PC. Dorrestein, M. Downes, R. Knight, RM. Evans, ‘Paired microbiome and metabolome analyses associate bile acid changes with colorectal cancer progression’, <strong><em>Cell Reports</em></strong>, 42(8), 112997, 2023</a></p></li>
-    <li><span class="pub-number">47</span><p><a class="publication-reference-link" href="https://doi.org/10.3390/plants12102059" target="_blank" rel="noopener">S.D. Singer, M. Lehmann, Z. Zhang, U. Subedi, K. Burton, N. Z-L Lim, R. O. Polp, G. Chen, S. Acharya, A. Hannoufa, T. Huan, ‘Elucidation of physiological, transcriptomic and metabolomic salinity response mechanisms in Medicago sativa’, <strong><em>Plants</em></strong>, 12(10), 2059, 2023</a></p></li>
+    <li><span class="pub-number">47</span><p><a class="publication-reference-link" href="https://doi.org/10.3390/plants12102059" target="_blank" rel="noopener">S.D. Singer, M. Lehmann, Z. Zhang, U. Subedi, K. Burton, N. Z-L Lim, R. O. Polp, G. Chen, S. Acharya, A. Hannoufa, T. Huan, ‘Elucidation of physiological, transcriptomic and metabolomic salinity response mechanisms in Medicago sativa’, <strong><em>Plants</em></strong>, 12(10), 2023</a></p></li>
     <li><span class="pub-number">48</span><p><a class="publication-reference-link" href="https://doi.org/10.3390/molecules28083483" target="_blank" rel="noopener">D.H. Ross, J. Guo, A. Bilbao, T. Huan, R.D. Smith, X. Zheng, ‘Evaluating Software Tools for Lipid Identification from Ion Mobility Spectrometry-Based Lipidomics Data’, Molecules, 28(8), 3483, 2023</a></p></li>
     <li><span class="pub-number">49</span><p><a class="publication-reference-link" href="https://doi.org/10.1073/pnas.2303275120" target="_blank" rel="noopener">D. Sexton, A. Hashimi, P. Beskrovnaya, L. Sibanda, T. Huan, E. Tocheva, ‘The cell envelope of Thermotogae suggests a mechanism for outer membrane biogenesis’, <strong><em>Proceedings of the National Academy of Sciences</em></strong>, 120(18) e2303275120, 2023</a></p></li>
     <li><span class="pub-number">50</span><p><a class="publication-reference-link" href="https://doi.org/10.1289/ehp11305" target="_blank" rel="noopener">F. Zhao, L. Li, P. Lin, Y. Chen, S. Xing, H. Du, Z. Wang, J. Yang, T. Huan, C. Long, L. Zhang, B. Wang, M. Fang, ‘HExpPredict: In Vivo Exposure Prediction of Human Blood Exposome Using a Random Forest Model and Its Application in Chemical Risk Prioritization’, <strong><em>Environmental Health Perspectives</em></strong>, 131(3), 037009, 2023</a></p></li>
@@ -211,6 +211,27 @@
       const publicationItems = Array.from(document.querySelectorAll(".publication-master-list > li"));
       const totalTarget = document.querySelector("[data-publication-total]");
       const recentTarget = document.querySelector("[data-publication-recent]");
+      const archiveList = document.querySelector(".publication-master-list");
+
+      const getPublicationYears = (item) => {
+        const text = item.textContent || "";
+        const latestPossibleYear = new Date().getFullYear() + 1;
+        return Array.from(text.matchAll(/\b(20\d{2})\b/g), (match) => Number(match[1]))
+          .filter((year) => year >= 2010 && year <= latestPossibleYear);
+      };
+
+      const latestPublicationYear = Math.max(...publicationItems.flatMap(getPublicationYears));
+
+      const getPublicationYear = (item) => {
+        const text = item.textContent || "";
+        const years = getPublicationYears(item);
+
+        if (/accepted/i.test(text) && Number.isFinite(latestPublicationYear)) {
+          return String(latestPublicationYear);
+        }
+
+        return years.length ? String(years[years.length - 1]) : "Other";
+      };
 
       if (totalTarget) {
         totalTarget.textContent = publicationItems.length;
@@ -220,16 +241,41 @@
         const currentYear = new Date().getFullYear();
         const recentCutoff = currentYear - 4;
         const recentCount = publicationItems.filter((item) => {
-          const text = item.textContent || "";
-          if (/accepted/i.test(text)) {
+          const publicationYear = getPublicationYear(item);
+
+          if (/accepted/i.test(item.textContent || "")) {
             return true;
           }
 
-          const years = Array.from(text.matchAll(/\b(20\d{2})\b/g), (match) => Number(match[1]));
-          return years.some((year) => year >= recentCutoff && year <= currentYear);
+          const year = Number(publicationYear);
+          return year >= recentCutoff && year <= currentYear;
         }).length;
 
         recentTarget.textContent = recentCount;
+      }
+
+      if (archiveList) {
+        const groups = publicationItems.reduce((collection, item) => {
+          const year = getPublicationYear(item);
+          const group = collection.get(year) || [];
+          group.push(item);
+          collection.set(year, group);
+          return collection;
+        }, new Map());
+
+        const sortedYears = Array.from(groups.keys()).sort((a, b) => {
+          if (a === "Other") return 1;
+          if (b === "Other") return -1;
+          return Number(b) - Number(a);
+        });
+
+        sortedYears.forEach((year) => {
+          const items = groups.get(year);
+          const marker = document.createElement("li");
+          marker.className = "publication-year-marker";
+          marker.innerHTML = `<h3>${year}</h3>`;
+          archiveList.append(marker, ...items);
+        });
       }
     })();
   </script>
