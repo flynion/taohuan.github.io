@@ -40,17 +40,17 @@
         <a class="publication-journal-tab" href="publications.html">
           <small>Collection</small>
           <span>All publications</span>
-          <strong><b>126</b> papers</strong>
+          <strong><b>129</b> papers</strong>
         </a>
         <a class="publication-journal-tab publication-journal-tab--journal publication-journal-tab--analytical publication-journal-tab--active" href="publications-analytical-chemistry.html">
           <img class="publication-journal-logo" src="images/journals/analytical-chemistry-wordmark.svg" alt="Analytical Chemistry">
           <span>Analytical Chemistry</span>
-          <strong><b>34</b> papers</strong>
+          <strong><b>35</b> papers</strong>
         </a>
         <a class="publication-journal-tab publication-journal-tab--journal publication-journal-tab--est" href="publications-environmental-science-technology.html">
           <img class="publication-journal-logo" src="images/journals/environmental-science-technology-wordmark.svg" alt="Environmental Science &amp; Technology">
           <span>Environmental Science &amp; Technology</span>
-          <strong><b>7</b> papers</strong>
+          <strong><b>8</b> papers</strong>
         </a>
       </div>
     </section>
@@ -59,11 +59,12 @@
       <div class="hl-wrap publication-single-wrap">
         <div class="publication-single-head">
           <p class="hl-eyebrow">Analytical Chemistry</p>
-          <h2>34 publications</h2>
+          <h2>35 publications</h2>
           <p>Filtered publication list showing only papers published in Analytical Chemistry.</p>
         </div>
         <ol class="publication-archive-list publication-master-list">
-<li><span class="pub-number">1</span><p><a class="publication-reference-link" href="https://doi.org/10.1021/acs.analchem.6c00292" target="_blank" rel="noopener">B. Low, C. Nguyen, T. Huan, ‘The Multifaceted Challenge of Normalizing Mass Spectrometry-Based Metabolomics Data’, <strong><em>Analytical Chemistry</em></strong>, accepted</a></p></li>
+<li><span class="pub-number">1</span><p><a class="publication-reference-link" href="https://doi.org/10.1021/acs.analchem.6c01208" target="_blank" rel="noopener">H. Yu, P. Biswas, E. Rideout, Y. Cao, O. Fiehn, T. Huan, &lsquo;BAGO: A Self-Optimizing Tool for LC-MS Gradient Design in Metabolomics&rsquo;, <strong><em>Analytical Chemistry</em></strong>, 98(25), 18660-18672, 2026</a></p></li>
+<li><span class="pub-number">2</span><p><a class="publication-reference-link" href="https://doi.org/10.1021/acs.analchem.6c00292" target="_blank" rel="noopener">B. Low, C. Nguyen, T. Huan, ‘The Multifaceted Challenge of Normalizing Mass Spectrometry-Based Metabolomics Data’, <strong><em>Analytical Chemistry</em></strong>, 98(19), 13967-13974, 2026</a></p></li>
 <li><span class="pub-number">2</span><p><a class="publication-reference-link" href="https://doi.org/10.1021/acs.analchem.5c01417" target="_blank" rel="noopener">C. Zhao, T. Zhao, Q. Shen, Z. Tang, X. Li, T. Huan, ‘Practical Guidance for Training Machine Learning Models in Metabolomics and Mass Spectrometry Research’, <strong><em>Analytical Chemistry</em></strong>, 97(42), 23005–23013, 2025</a></p></li>
 <li><span class="pub-number">3</span><p><a class="publication-reference-link" href="https://doi.org/10.1021/acs.analchem.5c00543" target="_blank" rel="noopener">Z. Tang, J. Yang, B. Su, X. Xu, X. Luo, H. Wang, K. Zhang, T. Huan, P. Sinues, M. Fang, X. Li, ‘Metabolite Fusion between Breath and Blood enables More In-depth Understanding of the Endogenous Metabolome’, <strong><em>Analytical Chemistry</em></strong>, 97(36), 19427–19436, 2025</a></p></li>
 <li><span class="pub-number">4</span><p><a class="publication-reference-link" href="https://doi.org/10.1021/acs.analchem.5c02792" target="_blank" rel="noopener">B. Liu, Z. Tang, T. Huan, ‘Adduct-Induced Variability in Tandem Mass Spectrometry’, <strong><em>Analytical Chemistry</em></strong>, 97(31), 17058-17066, 2025</a></p></li>
@@ -108,6 +109,12 @@
       <span>Department of Chemistry, The University of British Columbia · Vancouver, BC</span>
     </div>
   </footer>
+  <script>
+    document.querySelectorAll(".publication-master-list > li").forEach((item, index) => {
+      const number = item.querySelector(".pub-number");
+      if (number) number.textContent = index + 1;
+    });
+  </script>
 </body>
 </html>
 

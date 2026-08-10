@@ -36,8 +36,8 @@
 
     <section class="publication-dashboard">
       <div class="hl-wrap publication-dashboard-grid">
-        <article><strong data-publication-total>128</strong><span>Total publications listed</span></article>
-        <article><strong data-publication-recent>70</strong><span>Publications in the past 5 years</span></article>
+        <article><strong data-publication-total>129</strong><span>Total publications listed</span></article>
+        <article><strong data-publication-recent>71</strong><span>Publications in the past 5 years</span></article>
         <a class="publication-dashboard-link" href="https://scholar.google.com/citations?user=6dcrElUAAAAJ&amp;hl=en" target="_blank" rel="noopener"><strong>Google Scholar</strong><span>View citations and full publication profile</span></a>
       </div>
     </section>
@@ -69,7 +69,8 @@
           <h2>All publications</h2>
         </div>
         <ol class="publication-archive-list publication-master-list">
-    <li><span class="pub-number">1</span><p><a class="publication-reference-link" href="https://doi.org/10.1021/acs.analchem.6c01208" target="_blank" rel="noopener">H. Yu, P. Biswas, E. Rideout, Y. Cao, O. Fiehn, T. Huan, &lsquo;BAGO: A Self-Optimizing Tool for LC-MS Gradient Design in Metabolomics&rsquo;, <strong><em>Analytical Chemistry</em></strong>, 2026</a></p></li>
+    <li><span class="pub-number">1</span><p><a class="publication-reference-link" href="https://doi.org/10.1021/acs.est.6c03869" target="_blank" rel="noopener">Q. Shen, D. Zhang, T. Zhao, K.N.M. Chau, G. Grubisa, T. Huan, X.C. Le, X. Li, &lsquo;Diversity of Iodinated Water Disinfection Byproducts and Their Formation Dynamics Discovered Using Exposome-Scale Nontargeted Analysis and Machine Learning&rsquo;, <strong><em>Environmental Science &amp; Technology</em></strong>, 60(26), 18506-18518, 2026</a></p></li>
+    <li><span class="pub-number">2</span><p><a class="publication-reference-link" href="https://doi.org/10.1021/acs.analchem.6c01208" target="_blank" rel="noopener">H. Yu, P. Biswas, E. Rideout, Y. Cao, O. Fiehn, T. Huan, &lsquo;BAGO: A Self-Optimizing Tool for LC-MS Gradient Design in Metabolomics&rsquo;, <strong><em>Analytical Chemistry</em></strong>, 98(25), 18660-18672, 2026</a></p></li>
     <li><span class="pub-number">2</span><p><a class="publication-reference-link" href="https://doi.org/10.3389/fcimb.2026.1808564" target="_blank" rel="noopener">E. Esp&#237;n, C. Yang, CP. Shannon, AK. Checkervarty, S. Kim, L. Lapp, S. Assadian, B. Grunau, DM. Goldfarb, J. Hutton, T. Huan, SJ. Tebbutt, ‘Pilot longitudinal integrated transcriptomic–metabolomic study reveals immune and metabolic signatures in non-hospitalized healthcare workers with long COVID’, <strong><em>Frontiers in Cellular and Infection Microbiology</em></strong>, 16, 1808564, 2026</a></p></li>
     <li><span class="pub-number">3</span><p><a class="publication-reference-link" href="https://doi.org/10.1021/acs.analchem.6c00292" target="_blank" rel="noopener">B. Low, C. Nguyen, T. Huan, ‘The Multifaceted Challenge of Normalizing Mass Spectrometry-Based Metabolomics Data’, <strong><em>Analytical Chemistry</em></strong>, 98(19), 13967-13974, 2026</a></p></li>
     <li><span class="pub-number">4</span><p><a class="publication-reference-link" href="https://doi.org/10.1021/acs.est.6c05202" target="_blank" rel="noopener">T. Huan, X. Li, ‘Disinfection Byproducts in the Long-Tail Exposome: Unmet Challenges for Water Quality and Human Health’, <strong><em>Environmental Science &amp; Technology</em></strong>, 60(18), 13255-13258, 2026</a></p></li>
@@ -214,6 +215,11 @@
       const totalTarget = document.querySelector("[data-publication-total]");
       const recentTarget = document.querySelector("[data-publication-recent]");
       const archiveList = document.querySelector(".publication-master-list");
+
+      publicationItems.forEach((item, index) => {
+        const number = item.querySelector(".pub-number");
+        if (number) number.textContent = index + 1;
+      });
 
       const getPublicationYears = (item) => {
         const text = item.textContent || "";

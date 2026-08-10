@@ -40,17 +40,17 @@
         <a class="publication-journal-tab" href="publications.html">
           <small>Collection</small>
           <span>All publications</span>
-          <strong><b>126</b> papers</strong>
+          <strong><b>129</b> papers</strong>
         </a>
         <a class="publication-journal-tab publication-journal-tab--journal publication-journal-tab--analytical" href="publications-analytical-chemistry.html">
           <img class="publication-journal-logo" src="images/journals/analytical-chemistry-wordmark.svg" alt="Analytical Chemistry">
           <span>Analytical Chemistry</span>
-          <strong><b>34</b> papers</strong>
+          <strong><b>35</b> papers</strong>
         </a>
         <a class="publication-journal-tab publication-journal-tab--journal publication-journal-tab--est publication-journal-tab--active" href="publications-environmental-science-technology.html">
           <img class="publication-journal-logo" src="images/journals/environmental-science-technology-wordmark.svg" alt="Environmental Science &amp; Technology">
           <span>Environmental Science &amp; Technology</span>
-          <strong><b>7</b> papers</strong>
+          <strong><b>8</b> papers</strong>
         </a>
       </div>
     </section>
@@ -59,11 +59,12 @@
       <div class="hl-wrap publication-single-wrap">
         <div class="publication-single-head">
           <p class="hl-eyebrow">Environmental Science &amp; Technology</p>
-          <h2>7 publications</h2>
+          <h2>8 publications</h2>
           <p>Filtered publication list showing only papers published in Environmental Science &amp; Technology.</p>
         </div>
         <ol class="publication-archive-list publication-master-list">
-<li><span class="pub-number">1</span><p><a class="publication-reference-link" href="https://doi.org/10.1021/acs.est.6c05202" target="_blank" rel="noopener">T. Huan, X. Li, ‘Disinfection Byproducts in the Long-Tail Exposome: Unmet Challenges for Water Quality and Human Health’, <strong><em>Environmental Science &amp; Technology</em></strong>, accepted</a></p></li>
+<li><span class="pub-number">1</span><p><a class="publication-reference-link" href="https://doi.org/10.1021/acs.est.6c03869" target="_blank" rel="noopener">Q. Shen, D. Zhang, T. Zhao, K.N.M. Chau, G. Grubisa, T. Huan, X.C. Le, X. Li, &lsquo;Diversity of Iodinated Water Disinfection Byproducts and Their Formation Dynamics Discovered Using Exposome-Scale Nontargeted Analysis and Machine Learning&rsquo;, <strong><em>Environmental Science &amp; Technology</em></strong>, 60(26), 18506-18518, 2026</a></p></li>
+<li><span class="pub-number">2</span><p><a class="publication-reference-link" href="https://doi.org/10.1021/acs.est.6c05202" target="_blank" rel="noopener">T. Huan, X. Li, ‘Disinfection Byproducts in the Long-Tail Exposome: Unmet Challenges for Water Quality and Human Health’, <strong><em>Environmental Science &amp; Technology</em></strong>, 60(18), 13255-13258, 2026</a></p></li>
 <li><span class="pub-number">2</span><p><a class="publication-reference-link" href="https://doi.org/10.1021/acs.est.5c10336" target="_blank" rel="noopener">M. Gao, T. Zhao, X. Liao, T. Huan, Q. Shen, KN. Chau, D. Zhang, Z. Chen, H. Ma, X. Li, ‘Data-Driven Discovery of Unknown Precursors of N-Nitrosodimethylamine in Nontargeted Liquid Chromatography–High Resolution Mass Spectrometry Analysis’, <strong><em>Environmental Science &amp; Technology</em></strong>, 60(8), 6558–6568, 2026</a></p></li>
 <li><span class="pub-number">3</span><p><a class="publication-reference-link" href="https://doi.org/10.1021/acs.est.4c12698" target="_blank" rel="noopener">T. Zhao, Q. Shen, X. Li, T. Huan, ‘IodoFinder: machine learning-guided recognition of iodinated chemicals in nontargeted LC-MS/MS analysis’, <strong><em>Environmental Science &amp; Technology</em></strong>, 59(9), 4530-4539, 2025</a></p></li>
 <li><span class="pub-number">4</span><p><a class="publication-reference-link" href="https://doi.org/10.1021/acs.est.4c05165" target="_blank" rel="noopener">Q. Shen, T. Zhao, N. Wawryk, K. Chau, D. Zhang, K. Carroll, W. Chu, T. Huan, X. Li, ‘Nontargeted Analysis of Reactive Nitrogenous Compounds in Suwannee River Standard Reference Materials and Authentic River Water Samples’, <strong><em>Environmental Science &amp; Technology</em></strong>, 58(35), 15807–15815, 2024</a></p></li>
@@ -81,6 +82,12 @@
       <span>Department of Chemistry, The University of British Columbia · Vancouver, BC</span>
     </div>
   </footer>
+  <script>
+    document.querySelectorAll(".publication-master-list > li").forEach((item, index) => {
+      const number = item.querySelector(".pub-number");
+      if (number) number.textContent = index + 1;
+    });
+  </script>
 </body>
 </html>
 
