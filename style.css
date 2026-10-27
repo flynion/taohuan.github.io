@@ -1480,6 +1480,73 @@ a {
   max-width: 760px;
 }
 
+.research-pillar.research-pillar--full {
+  grid-template-columns: 1fr;
+}
+
+.research-pillar--full article {
+  max-width: none;
+}
+
+.research-application-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr);
+  gap: clamp(24px, 4vw, 56px);
+  align-items: center;
+  margin-top: 36px;
+  padding-top: 32px;
+  border-top: 1px solid var(--hl-line);
+}
+
+.research-application-copy h3 {
+  margin: 0 0 20px;
+  color: var(--hl-ubc-blue);
+  font-size: clamp(23px, 2.3vw, 30px);
+  line-height: 1.25;
+}
+
+.research-application-copy ul {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.research-application-copy li + li {
+  margin-top: 18px;
+}
+
+.research-application-figure {
+  min-width: 0;
+  margin: 0;
+}
+
+.research-application-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 16px 40px rgba(0, 33, 69, .1);
+}
+
+.research-application-figure figcaption {
+  margin-top: 12px;
+  color: var(--hl-muted);
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  .research-application-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .research-application-figure {
+    width: 100%;
+    max-width: 560px;
+    justify-self: center;
+  }
+}
+
 .research-pillar h2 {
   margin: 0 0 18px;
   color: var(--hl-ubc-blue);
@@ -1488,6 +1555,7 @@ a {
 }
 
 .research-pillar p:not(.hl-eyebrow),
+.research-pillar ul,
 .research-sponsors p {
   color: var(--hl-muted);
   font-size: 17px;
@@ -1496,6 +1564,20 @@ a {
 
 .research-pillar p + p {
   margin-top: 14px;
+}
+
+.research-pillar .project-references {
+  display: block;
+  margin: 6px 0 12px;
+  color: var(--hl-muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.project-references a {
+  color: var(--hl-ubc-blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .research-pillar-media {
@@ -1514,7 +1596,7 @@ a {
 }
 
 .research-pillar-media--machine {
-  background: linear-gradient(rgba(0, 33, 69, .08), rgba(0, 33, 69, .28)), url("images/sample-prep.jpg") center / cover;
+  background: url("images/research/ai-assisted-annotation.png") center / cover;
 }
 
 .research-pillar-media--application {
